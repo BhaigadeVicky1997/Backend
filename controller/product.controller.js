@@ -47,4 +47,5 @@ const getparticularProduct = async(req,res,next) =>{
     next(error);
    }
 }
+
 module.exports = {addproduct,multer,getProducts,getparticularProduct};

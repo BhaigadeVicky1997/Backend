@@ -9,6 +9,10 @@ const uploadImg = upload.single('profilepic');
 
 
 const fetchUser = async (req, res, next) => {
+   
+   const user = req.params.userId;
+   console.log(user)
+   console.log(user);
    try {
       const data = await User.find();
       if(data) throw createError(404,'No data') 
@@ -25,7 +29,7 @@ const registerUser = async (req, res, next) => {
 
    try {
       const { email, password, f_name, l_name } = req.body;
-      console.log(req.body.userId)
+      console.log(req.body.emailId)
       if (!email || !password) throw createError.BadRequest();
       const doesExists = await User.findOne({ email: email });
 
