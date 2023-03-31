@@ -6,6 +6,7 @@ var bodyParser = require('body-parser')
 const user_router = require('./routes/user_router');
 const about_router = require('./routes/aboutus.router');
 const router = require('./routes/contact.router');
+const productRouter = require('./routes/product.router');
 require('dotenv').config();
 require('./helper/init_mongoose');
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.json({limit:'100mb'}))
 app.use("/",user_router);
 app.use("/",about_router);
 app.use("/",router);
+app.use("/",productRouter)
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{

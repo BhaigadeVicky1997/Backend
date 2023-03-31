@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-const schema = mongoose.Schema();
+
+const schema = mongoose.Schema;
+
 
 const product = new schema({
     productname:{
@@ -14,7 +16,7 @@ const product = new schema({
     },
     cost:{
         type:Number,
-        requird:truen  
+        requird:true 
     }
 })
 
