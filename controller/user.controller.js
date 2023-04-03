@@ -29,7 +29,7 @@ const registerUser = async (req, res, next) => {
 
    try {
       const { email, password, f_name, l_name } = req.body;
-      console.log(req.body.emailId)
+      console.log(email, password, f_name, l_name)
       if (!email || !password) throw createError.BadRequest();
       const doesExists = await User.findOne({ email: email });
 
